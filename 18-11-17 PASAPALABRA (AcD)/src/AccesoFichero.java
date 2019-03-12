@@ -66,8 +66,8 @@ public class AccesoFichero {
 		SAXBuilder builder = new SAXBuilder();
 
 		Element element_raiz = documento.getRootElement();
-		Element element_jugador = element_raiz.getChild("jugador");
-		List<Element> lista_pregrunta = element_jugador.getChildren("pregunta");
+		Element element_contenido = element_raiz.getChild("jugador");
+		List<Element> lista_pregrunta = element_contenido.getChildren("pregunta");
 
 		for (Element element_pregunta : lista_pregrunta) {
 			String posicion = element_pregunta.getChild("posicion").getValue();

@@ -15,6 +15,7 @@ public class Main {
 				String numJuego = Consola.pedirNumero();
 				Document documento = AccesoFichero.generarXML(numJuego);
 				ArrayList<Pregunta> lista_PasaPal = AccesoFichero.datosXML(documento);
+				ConexionBD.insertarDatos(lista_PasaPal);
 				for (Pregunta pregunta : lista_PasaPal) {
 					if (Consola.mostrarPregunta(pregunta)) {
 						ContadorAciertos += 1;
